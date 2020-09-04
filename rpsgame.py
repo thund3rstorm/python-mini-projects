@@ -1,72 +1,102 @@
+"""
+https://github.com/thund3rstorm
+
+A game of Rock Paper Scissors
+"""
 import pyfiglet
 from random import randint
 art_msg=pyfiglet.figlet_format("Rock Paper Scissors")
 print("\n\t\t----thund3rstorm----")
 print(art_msg)
-mode=input("Press m for Multiplayer or any key for VS COM\n")
-print("Rock Paper Scissors!!!")
-if mode=="m":
-
+valid_choices = ["R","P","S"]
+retry=1
+mode=input("Press M for Multiplayer or any key to play against Computer\n").upper()
+print("Rock Paper Scissors!!!\n")
+if mode=="M":
 	p1_name=input("Enter Player 1 name: ")
-	p2_name=input("Enter Player 2 name: ")
+	p2_name=input("\nEnter Player 2 name: ")
+	while retry==1:
+		print("\nReady! Please Enter R for Rock(Stone), P for Paper and S for Scissors\n")
 
-	print("Ready! Please Enter R for Rock(Stone), P for Paper and S for Scissors")
+		while True:
+			p1=input(p1_name+ "\'s Choice: ").upper()	
+			if p1 not in valid_choices:
+				print("\nInvalid input! Please Enter R for Rock(Stone), P for Paper and S for Scissors")
+			else:
+				break
+		print("*******\n\n" * 20)
+		while True:
+			p2=input(p2_name+ "\'s Choice: ").upper()
+			if p2 not in valid_choices:
+				print("\nInvalid input! Please Enter R for Rock(Stone), P for Paper and S for Scissors\n")
+			else:
+				if p1==p2:
+					print("It's a Tie")
 
-	p1=input(p1_name+ "\'s Choice: ")
-	print("*******\n\n" * 20)
-	p2=input(p2_name+ "\'s Choice: ")
+				elif p1=='R' and p2=="P":
+					print("{} Won".format(p2_name) )
 
-	if p1==p2:
-		print("It's a Tie")
+				elif p1=='R' and p2=="S":
+					print("{} Won".format(p1_name) )
 
-	elif p1=='R' and p2=="P":
-		print("{} Won".format(p2_name) )
+				elif p1=='P' and p2=="R":
+					print("{} Won".format(p1_name) )
 
-	elif p1=='R' and p2=="S":
-		print("{} Won".format(p1_name) )
+				elif p1=='P' and p2=="S":
+					print("{} Won".format(p2_name) )
+				elif p1=='S' and p2=="P":
+					print("{} Won".format(p2_name) )
 
-	elif p1=='P' and p2=="R":
-		print("{} Won".format(p1_name) )
-
-	elif p1=='P' and p2=="S":
-		print("{} Won".format(p2_name) )
-	elif p1=='S' and p2=="P":
-		print("{} Won".format(p2_name) )
-
-	elif p1=='S' and p2=="R":
-		print("{} Won".format(p2_name) )
+				elif p1=='S' and p2=="R":
+					print("{} Won".format(p2_name) )
+				break
+		play_again = input("\npress y to play again or any key to exit the game ").upper()
+		if play_again =="Y":
+			retry=1
+		else:
+			retry=0
+			
 else:
-	p1_name=input("Enter Your name: ")
-	print("Ready! Please Enter R for Rock(Stone), P for Paper and S for Scissors")
+	p1_name=input("\nEnter Your name: ")
+	while retry==1:
+		print("\nReady! Please Enter R for Rock(Stone), P for Paper and S for Scissors\n")
+		while True:
+			p1=input(p1_name+ "\'s Choice: ").upper()
+			if p1 not in valid_choices:
+				print("\nInvalid input! Please Enter R for Rock(Stone), P for Paper and S for Scissors")
+			else:
+				rand_num = randint(0,2)
+				if rand_num == 0:
+					p2 = "R"
+				elif rand_num == 1:
+					p2 = "P"
+				else:
+					p2 = "S"
 
-	p1=input(p1_name+ "\'s Choice: ")
+				print("\nComputer Chose {} \n".format(p2))
+				if p1==p2:
+					print("It's a Tie")
 
-	rand_num = randint(0,2)
-	if rand_num == 0:
-		p2 = "R"
-	elif rand_num == 1:
-		p2 = "P"
-	else:
-		p2 = "S"
+				elif p1=='R' and p2=="P":
+					print("You Lost")
 
-	print("Computer Chose {}".format(p2))
-	if p1==p2:
-		print("It's a Tie")
+				elif p1=='R' and p2=="S":
+					print("{} Won".format(p1_name) )
 
-	elif p1=='R' and p2=="P":
-		print("{} Won".format(p2_name) )
+				elif p1=='P' and p2=="R":
+					print("{} Won".format(p1_name) )
 
-	elif p1=='R' and p2=="S":
-		print("{} Won".format(p1_name) )
+				elif p1=='P' and p2=="S":
+					print("You Lost")
 
-	elif p1=='P' and p2=="R":
-		print("{} Won".format(p1_name) )
+				elif p1=='S' and p2=="P":
+					print("{} Won".format(p1_name) )
 
-	elif p1=='P' and p2=="S":
-		print("{} Won".format(p2_name) )
-
-	elif p1=='S' and p2=="P":
-		print("{} Won".format(p1_name) )
-
-	elif p1=='S' and p2=="R":
-		print("{} Won".format(p2_name) )
+				elif p1=='S' and p2=="R":
+					print("You Lost")
+				break
+		play_again = input("\npress y to play again or any key to exit the game ").upper()
+		if play_again == "Y":
+			retry=1
+		else:
+			retry=0
