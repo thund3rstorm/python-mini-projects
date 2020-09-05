@@ -1,13 +1,19 @@
-"""
-https://github.com/thund3rstorm
-
-A game of Rock Paper Scissors
-"""
-import pyfiglet
 from random import randint
-art_msg=pyfiglet.figlet_format("Rock Paper Scissors")
-print("\n\t\t----thund3rstorm----")
-print(art_msg)
+print("\n\t\t----https://github.com/thund3rstorm----")
+print(r""" ____            _      ____                       
+|  _ \ ___   ___| | __ |  _ \ __ _ _ __   ___ _ __ 
+| |_) / _ \ / __| |/ / | |_) / _` | '_ \ / _ \ '__|
+|  _ < (_) | (__|   <  |  __/ (_| | |_) |  __/ |   
+|_| \_\___/ \___|_|\_\ |_|   \__,_| .__/ \___|_|   
+                                  |_|              
+ ____       _                        
+/ ___|  ___(_)___ ___  ___  _ __ ___ 
+\___ \ / __| / __/ __|/ _ \| '__/ __|
+ ___) | (__| \__ \__ \ (_) | |  \__ \
+|____/ \___|_|___/___/\___/|_|  |___/
+""")
+
+
 valid_choices = ["R","P","S"]
 retry=1
 mode=input("Press M for Multiplayer or any key to play against Computer\n").upper()
