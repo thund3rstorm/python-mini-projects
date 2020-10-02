@@ -22,7 +22,7 @@ First you have to choose a range of numbers in between which you are willing to 
 then the computer will choose a number in that range and you have to guess it!
 The computer will tell you if your guess is higher or lower than actual number.
 If the difference in your guess and the actual number is less or greater than 4 the computer will tell you that you are close.
-There is an attempts counter in the game to check how many attempts you have taken. Try to guess the number in less attempts. GOOD LUCK!\n\n""")
+There is an attempt counter in the game to check how many attempts you have taken. Try to guess the number in fewer attempts. GOOD LUCK!\n\n""")
 
 print("\nEnter the range of numbers for the game\n")
 min_no = int(input("Enter starting number "))
