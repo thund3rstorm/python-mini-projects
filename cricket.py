@@ -13,15 +13,14 @@ print(r"""  ____      _      _    _____ _
 help = input("\nPress h for rules or press any key to START playing!! ").lower()
 if help == "h":
     print("""\nIf you have played thumb cricket, then you already know the rules
-While you are Batting:
-You have to choose a number between 1 to 6(except 5).
-The computer then also chooses a number randomly, if your choice is different than computers then
-your number will be added to your score and if computer's choice and your choice of numbers are same then
+While you are batting:
+You have to choose a number between 1 and 6(except 5).
+The computer then also chooses a number randomly, if your choice is different from computers then
+your number will be added to your score and if computer's choice and your choice of numbers are the same then
 you will be declared as OUT!
-while Batting:
-you have to guess the number what computer may have chosen, if number matches then computer will be declared as OUT!\n
-
-You score just have to be higher than computer's in order to win the match""")
+While Batting:
+you have to guess the number what the computer may have chosen, if the number matches then the computer will be declared as OUT!\n
+You score just have to be higher than computer's in order to win the match.""")
 
 
 overs=int(input("\nEnter number of overs: \n"))
